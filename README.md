@@ -17,3 +17,6 @@ Image-Picker
 - Past works: [Product list](http://ayakix.com/) / [Waaaaay!](http://waaaaay.com/)
 - Blogs: [English](https://medium.com/@Ayakix) / [Japanese](http://blog.ayakix.com/)
 - Contact: [Twitter](https://twitter.com/ayakix)
+
+## Acknowledgements
+- This tips was developed in [Snapmart](https://snapmart.jp/)
