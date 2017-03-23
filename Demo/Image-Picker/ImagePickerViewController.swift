@@ -14,7 +14,7 @@ class ImagePickerViewController: UIViewController {
     
     fileprivate let kCellReuseIdentifier = "Cell"
     fileprivate let kColumnCnt: Int = 3
-    fileprivate let kColumnSpacing: CGFloat = 2
+    fileprivate let kCellSpacing: CGFloat = 2
     fileprivate var fetchResult: PHFetchResult<PHAsset>!
     fileprivate var imageManager = PHCachingImageManager()
     fileprivate var targetSize = CGSize.zero
@@ -29,8 +29,14 @@ class ImagePickerViewController: UIViewController {
 
 fileprivate extension ImagePickerViewController {
     fileprivate func initView() {
-        let imgWidth = (collectionView.frame.width - (kColumnSpacing * (CGFloat(kColumnCnt) - 1))) / CGFloat(kColumnCnt)
+        let imgWidth = (collectionView.frame.width - (kCellSpacing * (CGFloat(kColumnCnt) - 1))) / CGFloat(kColumnCnt)
         targetSize = CGSize(width: imgWidth, height: imgWidth)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = targetSize
+        layout.minimumInteritemSpacing = kCellSpacing
+        layout.minimumLineSpacing = kCellSpacing
+        collectionView.collectionViewLayout = layout
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCellReuseIdentifier)
     }
