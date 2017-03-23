@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Image_Picker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dP-51-Z6C">
+                                <rect key="frame" x="122" y="318" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UPZ-zB-ZTH"/>
+                                    <constraint firstAttribute="width" constant="130" id="esn-k3-QRJ"/>
+                                </constraints>
+                                <state key="normal" title="Open Image Picker"/>
+                                <connections>
+                                    <segue destination="jaX-hp-S7G" kind="show" id="ipb-0w-L3n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5dP-51-Z6C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ffo-lP-VYZ"/>
+                            <constraint firstItem="5dP-51-Z6C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x7A-51-pu4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="openImagePickerButton" destination="5dP-51-Z6C" id="jH1-gt-0TJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Image Picker View Controller-->
+        <scene sceneID="Qtb-fe-Ziy">
+            <objects>
+                <viewController id="jaX-hp-S7G" customClass="ImagePickerViewController" customModule="Image_Picker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gcm-qX-j9F"/>
+                        <viewControllerLayoutGuide type="bottom" id="GgA-Hf-8Hq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I1B-Dk-i15">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-yg-7S0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4M1-38-lVp">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="p99-Wb-11s">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="jaX-hp-S7G" id="DVa-Dp-q9i"/>
+                                    <outlet property="delegate" destination="jaX-hp-S7G" id="cXF-JZ-29v"/>
+                                    <outlet property="prefetchDataSource" destination="jaX-hp-S7G" id="Zzw-II-n4m"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="G3v-yg-7S0" secondAttribute="trailing" id="9Ph-M8-Wtv"/>
+                            <constraint firstItem="G3v-yg-7S0" firstAttribute="top" secondItem="I1B-Dk-i15" secondAttribute="top" id="Q6h-QI-a8O"/>
+                            <constraint firstItem="G3v-yg-7S0" firstAttribute="leading" secondItem="I1B-Dk-i15" secondAttribute="leading" id="dPL-Vg-WE6"/>
+                            <constraint firstItem="GgA-Hf-8Hq" firstAttribute="top" secondItem="G3v-yg-7S0" secondAttribute="bottom" id="nhj-Zw-4Da"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="G3v-yg-7S0" id="o2F-Gc-Wsc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7d-DV-fP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="855" y="37"/>
+        </scene>
+    </scenes>
+</document>
