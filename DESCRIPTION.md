@@ -130,3 +130,8 @@ extension ImagePickerViewController: UICollectionViewDataSourcePrefetching {
 
 ## サンプル
 [Image-Picker@github](https://github.com/ayakix/Image-Picker)に動作するプロジェクトがあります。
+
+
+## 動作確認
+このTipsは、「スマホの写真素材が売買できるサイト[Snapmart](https://snapmart.jp/)」を開発する中で生まれました。
+実際の動作を[Snapmartアプリ（iOS）](https://itunes.apple.com/jp/app/id1087206878)から確認できますので、是非ダウンロードしてみてください！
