@@ -9,6 +9,16 @@ Image-Picker
 )](http://mit-license.org)
 
 # Overview
+This is a sample program that creates a simple image picker like the camera roll.
+In the ImagePickerViewController, create a CollectionView and display the image from the PHAsset obtained with PHFetchResult.
+
+![screen_shot](images/screen_shot.png)
+
+You can easily change the number of columns and margins by changing the following constant.
+```
+fileprivate let kColumnCnt: Int = 3
+fileprivate let kCellSpacing: CGFloat = 2
+```
 
 ## Author
 
